@@ -1,0 +1,15 @@
+.DS_STORE
+*.log
+
+node_modules
+
+dist
+dist/
+coverage
+
+.idea/
+src/static/bower_components
+
+settings.json
+*.ep 
+.history

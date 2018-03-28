@@ -1,0 +1,118 @@
+.search-page__search-bar {
+  @extend .hide-mobile;
+}
+
+.venue-results {
+  @extend .mhm-desktop;
+
+  min-height: 28rem;
+}
+
+.venue-results.timeline {
+  .venue-results-grid {
+    > div {
+      flex: 1 0 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.venue-results-grid {
+  @media (max-width: $desktop-width) and (min-width: $tablet-width) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > div {
+      flex: 1 0 50%;
+      max-width: 50%;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > div {
+      flex: 1 0 25%;
+      max-width: 25%;
+    }
+  }
+
+  @media (max-width: $wide-desktop-width) and (min-width: $desktop-width) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > div {
+      flex: 1 0 33.3333%;
+      max-width: 33.3333%;
+    }
+  }
+}
+
+.search-results__title {
+  @extend .mbs-mobile;
+  @include mobile() {
+    text-align: center;
+  }
+}
+.search-results__show_filters {
+  @extend .color-grey-600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.search-results__change_view_action {
+  font-size: 35px;
+  @extend .mls;
+  @include mobile() {
+    margin: 0 .4rem;
+  }
+  i {
+    &::before {
+      width: 35px;
+      height: 35px;
+      display: block;
+    }
+  }
+  &:hover,
+  &.active {
+    .search-results__change_view_icon_timeline {
+      @extend .icon-hex-time-cover;
+    }
+    .search-results__change_view_icon_default {
+      @extend .icon-hex-grid-cover;
+    }
+    i {
+      @extend .color-turquoise;
+    }
+  }
+}
+
+.search-mobile-filter {
+  position: fixed;
+  z-index: 1051; // more than modal
+  bottom: 0;
+  width: calc(100% - 2rem);
+  margin: 1rem;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, .1);
+  overflow: hidden;
+  border-radius: .3rem;
+
+  button {
+    @extend .phs;
+    @extend .pvt;
+    width: 50%;
+    background: #FFF;
+
+    &.active {
+      @extend .color-bg-turquoise;
+      color: #FFF;
+      cursor: default;
+    }
+  }
+}

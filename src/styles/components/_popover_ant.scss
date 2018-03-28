@@ -1,0 +1,81 @@
+.ant-popover-placement-top,
+.ant-popover-placement-topLeft,
+.ant-popover-placement-topRight {
+  padding-bottom: 4px;
+}
+.ant-popover-hidden {
+  display: none;
+}
+.ant-popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1060;
+  cursor: auto;
+  user-select: text;
+  white-space: normal;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: left;
+}
+.ant-popover-inner {
+  @extend .color-bg-turquoise;
+  padding: .94rem;
+  border-radius: .5rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,.2);
+}
+.ant-popover>.ant-popover-content>.ant-popover-arrow {
+  left: 50%;
+  margin-left: -5px;
+}
+
+.ant-popover-placement-bottom>.ant-popover-content>.ant-popover-arrow,
+.ant-popover-placement-bottomLeft>.ant-popover-content>.ant-popover-arrow,
+.ant-popover-placement-bottomRight>.ant-popover-content>.ant-popover-arrow {
+  border-top-width: 0;
+  border-bottom-color: map_get($color-map, 'turquoise');
+  bottom: 100%;
+}
+
+.ant-popover-placement-top>.ant-popover-content>.ant-popover-arrow,
+.ant-popover-placement-topLeft>.ant-popover-content>.ant-popover-arrow,
+.ant-popover-placement-topRight>.ant-popover-content>.ant-popover-arrow {
+  border-bottom-width: 0;
+  border-top-color: map_get($color-map, 'turquoise');
+  bottom: -1px;
+}
+.ant-popover-arrow {
+  border-width: 5px;
+}
+.ant-popover-arrow, .ant-popover-arrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: rgba(0, 0, 0, 0);
+  border-style: solid;
+}
+
+.ant-btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 500;
+  text-align: center;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-color: #d9d9d9;
+  white-space: nowrap;
+  line-height: 1.5;
+  padding: 4px 15px;
+  font-size: 12px;
+  border-radius: 4px;
+  user-select: none;
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+  position: relative;
+  color: rgba(0,0,0,.65);
+}

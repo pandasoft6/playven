@@ -1,0 +1,168 @@
+.profile-navigation-wrapper {
+  margin-bottom: 5rem;
+}
+.profile-navigation {
+  @extend .max-width;
+  @extend .flex-col;
+  @extend .flex-row-desktop;
+  @extend .flex-hb;
+  @extend .color-bdb-lighter-grey;
+  @extend .mbm;
+
+  .profile-navigation__title {
+    @extend .color-primary-brand;
+    @extend .em-high;
+    @extend .full-width-mobile;
+    @extend .text-center-mobile;
+    font-size: .8125rem;
+  }
+
+  .profile-navigation__user_name {
+    @extend .color-dark-grey;
+    @extend .em-high;
+    @extend .full-width-mobile;
+    @extend .text-center-mobile;
+    font-size: 1.875rem;
+    line-height: 1;
+  }
+
+  .profile-navigation__header {
+    @extend .mtm-mobile;
+    @extend .text-uc;
+  }
+
+  .profile-navigation_row {
+    @extend .flex-row;
+    @extend .flex-col-mobile;
+    @extend .flex-hc-mobile;
+    @extend .full-width-mobile;
+    @extend .text-center-mobile;
+    @extend .text-uc;
+    @extend .mtt-mobile;
+    @extend .mvm-gt-mobile;
+
+    .profile-navigation_link {
+      @extend .mhm;
+      @extend .mvt-mobile;
+      font-size: .875rem;
+
+      cursor: pointer;
+
+      &.active {
+        @extend .color-primary-brand;
+      }
+
+      a:hover {
+        @extend .color-primary-brand;
+      }
+    }
+  }
+}
+
+.reservations-navigation {
+  @extend .flex-row;
+  @extend .flex-col-lt-desktop;
+  @extend .mtm-gt-mobile;
+
+  .reservations-navigation__fields-wrapper {
+    @extend .flex-row;
+    @extend .flex-col-mobile;
+    @extend .flex-vc-mobile;
+    margin: 0 -.5rem;
+
+    .navigation-field {
+      flex-grow: 1;
+      padding: 0 .5rem;
+
+      .Select {
+        width: 100%;
+      }
+
+      @include mobile {
+        flex-grow: inherit;
+        width: 100%;
+        max-width: 22rem;
+      }
+    }
+  }
+}
+
+.profile-navigation-secondary {
+  @extend .flex-row;
+  @extend .text-uc;
+  > div {
+    @extend .flex-col-lt-desktop;
+    align-items: center!important;
+  }
+  .profile-navigation_link {
+    @extend .pvt;
+    @extend .phs;
+    @extend .color-grey-500;
+    @extend .color-bd-grey-500;
+    border-left: 0;
+    font-size: .875rem;
+    cursor: pointer;
+    &:first-child {
+      border-radius: .3rem 0 0 .3rem;
+      @extend .color-bd-grey-500;
+    }
+    &:last-child {
+      border-radius: 0 .3rem .3rem 0;
+    }
+    &.active {
+      @extend .color-bg-primary-brand;
+      @extend .color-bd-primary-brand;
+      @extend .color-white;
+    }
+
+    a:hover {
+      @extend .color-primary-brand;
+    }
+  }
+}
+
+.navigation-field {
+  @extend .mlm;
+  text-transform: none;
+
+  @include lt-desktop {
+    margin: 1rem 0 0!important;
+  }
+
+  .navigation-field__title {
+    font-size: .875rem;
+  }
+
+  .Select {
+    margin: 0;
+    color: #000;
+  }
+
+  .Select-control {
+    padding: 0 1.5rem 0 0;
+    width: 12rem;
+    white-space: nowrap;
+    @include lt-desktop {
+      width: 100%;
+    }
+  }
+
+  .Select-option {
+    @extend .mbt;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .Select-menu-outer {
+    box-shadow: 0 1rem 2.5rem 0 rgba(0, 0, 0, 0.1)!important;
+
+    .select-subitem {
+      @extend .t6;
+      @extend .mls;
+      @extend .text-uc;
+    }
+  }
+}

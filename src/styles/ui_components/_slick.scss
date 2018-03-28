@@ -1,0 +1,47 @@
+// This is important otherwise Slick doesn't work within flex containers
+// since otherwise is does not compute the width properly
+* {
+  min-height: 0;
+  min-width: 0;
+}
+
+.slick-list, .slick-track {
+  height: 100%;
+}
+
+.slick-dots {
+
+  li button:before {
+    @extend .color-white;
+    font-size: 0.5625rem;
+    opacity: 1;
+  }
+
+  li.slick-active button:before {
+    @extend .color-turquoise;
+  }
+}
+
+.slick-arrow:before {
+  display: none;
+}
+
+.slick-disabled {
+  opacity: 0;
+}
+
+.slick-next {
+  width: 0;
+  height: 0;
+  border-left: 1.0625rem solid map_get($color-map, 'turquoise');
+  border-top: 0.625rem solid transparent;
+  border-bottom: 0.625rem solid transparent;
+}
+
+.slick-prev {
+  width: 0;
+  height: 0;
+  border-right: 1.0625rem solid map_get($color-map, 'turquoise');
+  border-top: 0.625rem solid transparent;
+  border-bottom: 0.625rem solid transparent;
+}

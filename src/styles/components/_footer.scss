@@ -1,0 +1,58 @@
+.footer {
+  min-height: 6.25rem;
+  position: relative;
+
+  a {
+    opacity: .3;
+  }
+
+  .footer-links {
+    a:hover, a:focus {
+      @extend .color-white;
+      text-decoration: none;
+      -webkit-box-shadow: 0 2px 0 0 #fff;
+      -moz-box-shadow: 0 2px 0 0 #fff;
+      box-shadow: 0 2px 0 0 #fff;
+    }
+  }
+
+  .logo {
+
+  }
+
+  .logo-partner {
+    filter: grayscale(100%);
+    opacity: .6;
+    width: 110px;
+    margin: 0 3rem;
+  }
+
+  .links {
+    flex: 2;
+
+    .social-links {
+      a:hover, a:focus {
+        @extend .color-hover-turquoise;
+      }
+    }
+  }
+
+  .language {
+    flex: 1;
+  }
+
+
+  @include lt-desktop {
+    .logo {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .language {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}

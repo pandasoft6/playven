@@ -1,0 +1,105 @@
+.SelectPlayven {
+  position: relative;
+  .Select-control {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .Select-input {
+    position: absolute;
+  }
+  &.is-open {
+    .Select-arrow-zone {
+      transform: rotate(180deg);
+    }
+  }
+  .Select-arrow-zone {
+    @extend .icon-up-arrow;
+    @extend .color-grey;
+    font-family: 'playven-icons';
+    position: absolute;
+    top: .6rem;
+    right: .5rem;
+    font-size: .5rem;
+    transition: .2s;
+    cursor: pointer;
+  }
+  .Select-clear-zone {
+    @extend .color-red;
+    margin-left: auto;
+    margin-right: .6rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  &.open-menu-to-bottom {
+    &.is-open {
+      .Select-arrow-zone {
+        transform: rotate(0);
+      }
+    }
+    .Select-arrow-zone {
+      transform: rotate(180deg);
+    }
+    .Select-menu-outer {
+      top: 100%;
+      bottom: auto;
+      &:before {
+        content: "";
+        position: absolute;
+        top: -1.67rem;
+        bottom: auto;
+        left: 1rem;
+        border: 1rem solid map_get($color-map, 'turquoise');
+        border-right-color: transparent;
+        border-left-color: transparent;
+        border-top-color: transparent;
+      }
+    }
+  }
+  .Select-menu-outer {
+    @extend .color-bg-turquoise;
+    @extend .color-white;
+    position: absolute;
+    z-index: 2;
+    top: auto;
+    bottom: 100%;
+    border-radius: .6rem;
+    border: 0;
+    box-shadow: none;
+    padding: .94rem .94rem .65rem;
+    margin: 0 0 .8rem;
+    width: 25rem;
+    .Select-menu-header {
+      @extend .color-highlight-blue;
+      font-size: .75rem;
+      line-height: 1rem;
+    }
+    .Select-menu-footer {
+      @extend .color-highlight-blue;
+      font-size: .75rem;
+      line-height: 1rem;
+    }
+    .Select-option {
+      @extend .color-bdb-highlight-primary-brand;
+      @extend .mbt;
+      padding: 0;
+      background: none;
+      border-radius: 0;
+      &.is-focused {
+        background: none;
+        @extend .color-bdb-white;
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -1.67rem;
+      left: 1rem;
+      border: 1rem solid map_get($color-map, 'turquoise');
+      border-right-color: transparent;
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+    }
+  }
+}

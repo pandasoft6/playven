@@ -1,0 +1,54 @@
+.court-button {
+  @extend .color-bg-grey-300;
+  @extend .mat;
+  @extend .phs;
+  @extend .pvt;
+  @extend .t5;
+
+  border-radius: .25rem;
+  cursor: pointer;
+  min-width: 12.5rem;
+
+  .name {
+    @extend .color-primary-brand;
+    @extend .text-uc;
+    font-family: $font-geom;
+  }
+
+  .time {
+    @extend .color-grey-600;
+  }
+
+  &.not-selectable {
+    .name, .time {
+      @extend .color-grey-400;
+    }
+
+    &:hover {
+      cursor: auto;
+    }
+  }
+
+  &.selected-for-booking {
+    @extend .color-bg-primary-brand;
+
+    .name {
+      @extend .color-white;
+    }
+
+    .time {
+      @extend .color-grey-400;
+    }
+
+    &::after {
+      @extend .color-white;
+
+      content: $icon-hex-close;
+      font-family: playven-icons,serif;
+      font-size: 1rem;
+      position: relative;
+      top: -0.8rem;
+      right: -1.2rem;
+    }
+  }
+}

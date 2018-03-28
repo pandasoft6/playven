@@ -1,0 +1,52 @@
+.price-bubble {
+  @extend .color-primary-brand;
+  @extend .flex-row;
+  @extend .flex-hc;
+  @extend .flex-vc;
+
+  width: 2.875rem;
+  opacity: .99;
+  position: relative;
+
+  &:before {
+    @extend .color-primary-brand;
+    content: $icon-hex;
+    font-family: playven-icons, serif;
+    font-size: 2.875rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .price-bubble__currency {
+    @extend .color-white;
+    @extend .t6;
+
+    margin-top: -0.4rem;
+    margin-right: 0.1rem;
+    z-index: 1;
+  }
+
+  .price-bubble__amount {
+    @extend .color-white;
+    @extend .t5;
+    @extend .em-high;
+    margin-top: 0.2rem;
+    font-size: 1rem;
+    z-index: 1;
+  }
+}
+
+.active .price-bubble:before {
+  @extend .color-white;
+}
+
+.active .price-bubble__currency,
+.active .price-bubble__amount {
+  @extend .color-primary-brand;
+}

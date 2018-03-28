@@ -1,0 +1,80 @@
+$color-map: (
+  'white': #ffffff,
+  'white-ghost': #f5f5f5,
+  'white-smoke': #f3f2f2,
+  'highlight-white': #c1cffb,
+  'lighter-grey': #e1e7ee,
+  'light-grey': #b7b7b7,
+  'grey-10': #d8dee6,
+  'highlight-grey': #9fa5ad,
+  'grey': #85898f,
+  'dark-grey': #21262d,
+  'red': #d9534f,
+  'red-error': #e23636,
+  'light-blue': #e6f1fe,
+  'highlight-blue': #9abeff,
+  'aqua': #a8e5ff,
+  'pale-turquoise': #56a4ff,
+  'primary-brand': #0e7dff,
+  'highlight-primary-brand': #4199ff,
+  'light-turquoise': #4caaff,
+  'turquoise-dropdown': #3e91f9,
+  'turquoise': #0e76f7,
+  'turquoise-text': #c2d2f5,
+  'dark-turquoise': #0e89f7,
+  'hover-turquoise': #23527c,
+  'light-azure': #0058d9,
+  'azure': #0f54a4,
+  'dark-blue': #222645,
+  'highlight-dark-blue': #333967,
+  'grey-100': #fbfbfb,
+  'grey-150': #fafbfc,
+  'grey-200': #e1e4ea,
+  'grey-300': #e7e9f1,
+  'grey-400': #ccd1d8,
+  'grey-500': #d8dee6,
+  'grey-600': #9fa5ad,
+  'grey-700': #85898f,
+  'grey-800': #474747,
+  'grey-900': #212121,
+);
+
+@mixin color-classes($color-name, $color) {
+  .color-#{$color-name} {
+    color: $color;
+  }
+
+  .color-bg-#{$color-name} {
+    background-color: $color;
+  }
+
+  .color-bd-#{$color-name} {
+    border: 1px solid $color;
+  }
+
+  .color-bdt-#{$color-name} {
+    border-top: 1px solid $color;
+  }
+
+  .color-bdb-#{$color-name} {
+    border-bottom: 1px solid $color;
+  }
+
+  .color-bdl-#{$color-name} {
+    border-left: 1px solid $color;
+  }
+
+  .color-bdh-#{$color-name} {
+    border-left: 1px solid $color;
+    border-right: 1px solid $color;
+  }
+
+  .color-bdv-#{$color-name} {
+    border-bottom: 1px solid $color;
+    border-top: 1px solid $color;
+  }
+}
+
+@each $color-name, $color in $color-map {
+  @include color-classes($color-name, $color);
+}

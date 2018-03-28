@@ -1,0 +1,6 @@
+blueprints/**/files/**
+coverage/**
+node_modules/**
+dist/**
+src/index.html
+src/utils/rollbar.umd.nojson.min.js

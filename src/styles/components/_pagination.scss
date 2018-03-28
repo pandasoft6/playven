@@ -1,0 +1,45 @@
+.pagination-wrapper {
+  margin: 0 auto;
+  max-width: 23rem;
+}
+.pagination {
+  @extend .t5;
+  li {
+    a {
+      @extend .color-light-grey;
+      border: 2px solid map_get($color-map, 'grey-300');
+      i {
+        bottom: 0.4rem;
+        font-size: 2.2rem;
+        left: 0.5rem;
+      }
+      border-radius: 6px;
+      margin: 0 0.3rem;
+      &.active {
+        @extend .color-bg-turquoise;
+        @extend .color-white;
+        border: 2px solid map_get($color-map, 'turquoise');
+      }
+      &.active.icon {
+        background: none;
+        &:hover {
+          @extend .color-turquoise;
+        }
+      }
+      &.disabled.icon {
+        @extend .color-grey-400;
+        cursor: not-allowed;
+        &:hover {
+          background: none;
+        }
+      }
+      &.icon {
+        @extend .color-grey-400;
+        background: none;
+        border: none;
+        padding: 0;
+        position: relative;
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+.venue-overview {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background-image: rgba(0, 0, 0, 0.1);
+    z-index: 1
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .button-toggle-info {
+    cursor: pointer;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    @include mobile {
+      display: block;
+    }
+    i {
+      position: relative;
+      top: .2rem;
+    }
+    span {
+      text-transform: uppercase;
+      font-size: .7rem;
+      text-decoration: underline;
+      letter-spacing: 1px;
+    }
+  }
+
+  .information {
+    @include mobile {
+      text-align: center;
+    }
+    @include gt-mobile {
+      display: block !important;
+    }
+    a:hover {
+      opacity: 0.8;
+    }
+
+    div, a {
+      user-select: text;
+      -webkit-user-select: text;
+      -moz-user-select: text;
+      -ms-user-select: text;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: calc(100% - 3rem);
+      @include mobile {
+        width: auto;
+      }
+    }
+  }
+
+  .slick-dots {
+    bottom: 5rem;
+    z-index: 3;
+  }
+
+  .search-area-buffer {
+    height: 5rem;
+  }
+
+  .price-range-divider {
+    position: relative;
+    z-index: 2;
+
+    &:after {
+      @extend .color-white;
+
+      content: $icon-hex;
+      font-family: playven-icons, serif;
+      font-size: 2.5rem;
+      position: absolute;
+      transform-origin: 50% 50%;
+      transition: all .5s ease-out;
+      z-index: -1;
+      left: -.5rem;
+      top: -0.7rem;
+    }
+  }
+}

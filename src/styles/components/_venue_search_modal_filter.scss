@@ -1,0 +1,31 @@
+.search-filter-modal {
+  margin: 0;
+  height: 100%;
+  background: #FFF;
+  .modal-content {
+    padding: 2rem 0 5rem;
+  }
+  .modal-content,
+  .modal-body {
+    height: 100%;
+  }
+  .modal-body {
+    overflow-y: auto;
+  }
+  .modal-close {
+    position: absolute;
+    z-index: 1;
+    top: .5rem;
+    right: .5rem;
+  }
+
+  .venue-search-bar {
+    width: 100%;
+    .search-field {
+      width: 100%;
+      .Select-arrow-zone .Select-arrow:before {
+        font-size: .55rem;
+      }
+    }
+  }
+}

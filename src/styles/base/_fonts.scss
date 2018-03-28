@@ -1,0 +1,10 @@
+$font-geo : 'Geometria', sans-serif;
+$font-geob: 'GeometriaBold', sans-serif;
+$font-geol: 'GeometriaLight', sans-serif;
+$font-geom: 'GeometriaMedium', sans-serif;
+
+@include font-face("Geometria", "./fonts/Geometria/Geometria", $file-formats: eot woff ttf svg);
+@include font-face("GeometriaBold", "./fonts/GeometriaBold/GeometriaBold", $file-formats: eot woff ttf svg);
+@include font-face("GeometriaLight", "./fonts/GeometriaLight/GeometriaLight", $file-formats: eot woff ttf svg);
+@include font-face("GeometriaMedium", "./fonts/GeometriaMedium/GeometriaMedium", $file-formats: eot woff ttf svg);
+

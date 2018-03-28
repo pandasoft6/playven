@@ -1,0 +1,330 @@
+.venue-search-result-item {
+  position: relative;
+  box-shadow: 0 51px 92px rgba(0,0,0,0.1);
+
+  &.timeline {
+    border-radius: .3rem;
+    overflow: hidden;
+    padding-left: 10rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    min-height: 10.625rem;
+    .venue-image-preview {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 9rem;
+      height: 100%;
+    }
+    .venue-name {
+      padding: 0;
+    }
+    .venue-timeslot-wrapper {
+      padding: 0 2rem;
+      transform: translateX(-1rem);
+    }
+    .venue-timeslot-btn-wrapper {
+      width: 100%;
+      position: relative;
+      padding: .5rem .3rem;
+      &.empty {
+        .venue-timeslot {
+          @extend .color-bg-grey-300;
+          &:hover {
+            color: inherit;
+            border: inherit;
+            @extend .color-bg-grey-300;
+            cursor: not-allowed;
+          }
+        }
+      }
+      & + .venue-timeslot-btn-wrapper {
+        transform: translateX(50%);
+      }
+      &::before {
+        content: '';
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        margin-bottom: -1px;
+        bottom: 50%;
+        left: 0;
+        background: map_get($color-map, 'grey-300');
+      }
+    }
+    .venue-timeslot-slide-with-two-buttons {
+      .venue-timeslot-btn-wrapper {
+        &::before {
+          content: '';
+          height: 1px;
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background: map_get($color-map, 'grey-300');
+        }
+        & + .venue-timeslot-btn-wrapper {
+          &::before {
+            bottom: auto;
+            top: 0;
+          }
+        }
+      }
+    }
+    .time-slot-carousel {
+      display: block;
+    }
+    .time-slot-carousel .slick-next,
+    .time-slot-carousel .slick-prev {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 0;
+    }
+    .time-slot-carousel .slick-next {
+      right: -1rem;
+    }
+    .time-slot-carousel .slick-prev {
+      left: -1rem;
+      transform: rotate(180deg) translateY(50%);
+    }
+  }
+
+  .venue-name {
+    @extend .phs;
+    @extend .pts;
+    @extend .pbt;
+  }
+
+  .venue-image-preview {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 13rem;
+    display: block;
+  }
+
+  .venue-search-result-item-content {
+    @extend .color-white;
+    position: relative;
+  }
+
+  .venue-carousel-item-overview {
+    @extend .color-white;
+    background-color: rgba(34, 38, 69, 0.8);
+    min-height: 3rem;
+
+    .venue-price {
+      @extend .mls;
+      @extend .t2;
+      @extend .color-bg-primary-brand;
+      @extend .pvt;
+      @extend .phs;
+
+      min-width: 7rem;
+    }
+
+    .venue-price-currency {
+      @extend .t5;
+
+      position: relative;
+      top: -0.5rem;
+      left: -0.2rem;
+    }
+
+    .venue-price-plus {
+      @extend .em-high;
+      padding-left: 0.2rem;
+    }
+  }
+
+  .venue-detail {
+    @extend .phm;
+    @extend .ptm;
+
+    .venue-attribute {
+      @extend .flex-row;
+      @extend .mvs;
+
+      a:hover {
+        opacity: 0.8;
+      }
+
+      i {
+        @extend .color-primary-brand;
+        @extend .t3;
+      }
+
+      .venue-attribute-text {
+        @extend .mls;
+
+        user-select: text;
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: calc(100% - 3rem);
+      }
+    }
+  }
+
+  .venue-button {
+    @extend .color-primary-brand;
+
+    .icon-hex, .icon-hex-outline {
+      font-size: 4.5rem;
+      position: absolute;
+      right: 2.4rem;
+      top: 2.4rem;
+    }
+
+    .icon-short-arrow-right {
+      font-size: 1.2rem;
+      position: absolute;
+      right: 3.75rem;
+      top: 4rem;
+    }
+
+    .icon-hex-outline {
+      display: block;
+    }
+
+    .icon-hex {
+      display: none;
+    }
+
+    &:hover {
+      .icon-hex-outline {
+        display: none;
+      }
+
+      .icon-hex {
+        display: block;
+      }
+
+      .icon-short-arrow-right {
+        @extend .color-white;
+      }
+    }
+  }
+}
+
+.venue-timeslot-btn-wrapper {
+  width: 25%;
+  padding: .3rem;
+  float: left;
+}
+.venue-timeslot {
+  @extend .color-bg-white;
+  padding: .5rem .3rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  border: 2px solid map_get($color-map, 'grey-300');
+  font-size: .7rem;
+  line-height: 1.4;
+  font-family: $font-geom;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  height: 2.125rem;
+  width: 100%;
+  position: relative;
+
+  &:hover {
+    @extend .color-white;
+    @extend .color-bg-primary-brand;
+    border-color: map_get($color-map, 'primary-brand');
+  }
+}
+
+.venue-timeslot__popover {
+  width: 16rem;
+  .time-slot__book_list_wrapper {
+    max-height: 12rem;
+    overflow-y: auto;
+  }
+  &.popover {
+    &.bottom > .arrow,
+    &.bottom > .arrow:after {
+      border-bottom-color: map_get($color-map, 'turquoise');
+    }
+    &.top > .arrow,
+    &.top > .arrow:after {
+      border-top-color: map_get($color-map, 'turquoise');
+    }
+  }
+  .popover-title {
+    @extend .color-white;
+    padding: 0 0 .8rem;
+    opacity: .6;
+    border: 0;
+    background: none;
+    text-transform: none;
+    font-size: .75rem;
+    line-height: 1rem;
+    letter-spacing: 1px;
+    font-family: $font-geo;
+  }
+  .button-book-court {
+    cursor: pointer;
+  }
+  .time-slot__book_court {
+    @extend .mbt;
+    @extend .pbt;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    letter-spacing: 1px;
+    font-family: $font-geo;
+  }
+  .time-slot__name {
+    font-family: $font-geom;
+    font-size: .75rem;
+    line-height: 1;
+    letter-spacing: 1px;
+  }
+  .time-slot__price {
+    @extend .color-aqua;
+    font-size: .57rem;
+    margin-left: .7rem;
+    font-family: $font-geo;
+    position: relative;
+    bottom: .12rem;
+  }
+}
+
+.venue-timeslot-wrapper {
+  padding: 0 .3rem;
+}
+
+.time-slot-carousel {
+  @extend .flex-col;
+  @extend .flex-vc;
+  .slick-next,
+  .slick-prev {
+    @extend .mvt;
+    position: static;
+    transform: none;
+    background: url('../../assets/icons/triangle-grey.svg') no-repeat 100% center;
+    background-size: cover;
+    border: 0;
+    width: 1rem;
+    height: 1rem;
+  }
+  .slick-prev {
+    transform: rotate(-90deg);
+  }
+  .slick-next {
+    transform: rotate(90deg);
+  }
+  .slick-list,
+  .slick-track {
+    height: auto;
+  }
+  .slick-slide {
+    &::after,
+    &::before {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+}

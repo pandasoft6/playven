@@ -1,0 +1,127 @@
+.available-courts-grid {
+
+  $grid-height: 3.875rem;
+
+  .time {
+    text-align: center;
+    position: relative;
+    .hyphen {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      margin: 0 0 0 .25rem;
+    }
+  }
+
+  .slick-arrow {
+    top: 1.7rem;
+    position: absolute;
+    z-index: 2
+  }
+
+  .slick-next {
+    right: 0.6rem;
+    width: 0;
+    height: 0;
+    border-left: 0.675rem solid map_get($color-map, 'turquoise');
+    border-top: 0.425rem solid transparent;
+    border-bottom: 0.425rem solid transparent;
+  }
+
+  .slick-prev {
+    left: 0.6rem;
+    width: 0;
+    height: 0;
+    border-right: 0.675rem solid map_get($color-map, 'turquoise');
+    border-top: 0.425rem solid transparent;
+    border-bottom: 0.425rem solid transparent;
+  }
+
+  .grid-times {
+    margin-top: 3.75rem;
+
+    .grid-time {
+      @extend .color-pale-turquoise;
+
+      height: $grid-height;
+      text-decoration: underline;
+    }
+  }
+
+  .grid-column-name {
+    @extend .color-bg-light-blue;
+    @extend .color-grey-900;
+    @extend .pvs;
+    @extend .pht;
+    @extend .flex-row;
+    @extend .flex-hc;
+    @extend .flex-vc;
+    @extend .text-center;
+
+    height: 4.5rem;
+  }
+
+  .grid-court {
+    @extend .color-white;
+    @extend .color-bdv-white;
+    @extend .color-bg-light-turquoise;
+    @extend .text-center;
+    @extend .t5;
+    @extend .flex-row;
+    @extend .flex-hc;
+    @extend .flex-vc;
+
+    height: $grid-height;
+    min-width: 6rem;
+
+    &:hover {
+      cursor: pointer;
+      @extend .color-bg-dark-turquoise;
+    }
+
+    &.grid-court-double {
+      height: $grid-height * 2;
+    }
+
+    &.grid-court-triple {
+      height: $grid-height * 3;
+    }
+
+    &.grid-court-quadruple {
+      height: $grid-height * 4;
+    }
+
+    &.grid-court-selected {
+      @extend .color-bg-dark-turquoise;
+    }
+
+    &.grid-court-selected-overlapping {
+      @extend .color-bg-dark-turquoise;
+      @extend .color-bdb-dark-turquoise;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &.grid-court-overlapping {
+      @extend .color-bg-dark-turquoise;
+      @extend .color-bdv-dark-turquoise;
+      cursor: pointer;
+
+      &:hover {
+        cursor: pointer;
+        @extend .color-bg-dark-turquoise;
+      }
+    }
+
+    &.grid-court-booked, &.grid-court-unavailable {
+      @extend .color-grey-600;
+      @extend .color-bg-grey-300;
+
+      &:hover {
+        cursor: inherit;
+        @extend .color-bg-grey-300;
+      }
+    }
+  }
+}

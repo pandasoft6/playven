@@ -1,0 +1,71 @@
+$font-size-map: (
+  '1': 2.5rem, // 40px
+  '2': 2rem, // 32px
+  '3': 1.25rem, // 20px
+  '4': 1rem, // 16px
+  '5': .875rem, // 14px
+  '6': .625rem, // 10px
+);
+
+@each $font-size-number, $font-size in $font-size-map {
+  .t#{$font-size-number} {
+    font-size: $font-size;
+    line-height: $font-size + 0.5rem;
+  }
+
+  h#{$font-size-number} {
+    font-family: $font-geob;
+    text-transform: uppercase;
+    font-size: $font-size;
+    line-height: $font-size + 0.5rem;
+  }
+
+  @include mobile {
+    .t#{$font-size-number} {
+      font-size: $font-size + 0.125rem;
+      line-height: $font-size + 0.625rem;
+    }
+
+    h#{$font-size-number} {
+      font-size: $font-size + 0.125rem;
+      font-weight: 700;
+      line-height: $font-size + 0.625rem;
+    }
+  }
+}
+
+h1 {
+   letter-spacing: 0.075rem;
+}
+
+h2, h3 {
+  letter-spacing: 0.0375rem;
+}
+
+.t4 {
+  letter-spacing: 0.03125rem;
+}
+
+.t5 {
+  letter-spacing: 0.0625rem;
+}
+
+.em-high {
+  font-weight: 700;
+}
+
+.em-low {
+  font-weight: 300;
+}
+
+.text-uc {
+  text-transform: uppercase;
+}
+
+.text-lc {
+  text-transform: lowercase;
+}
+
+.text-cz {
+  text-transform: capitalize;
+}

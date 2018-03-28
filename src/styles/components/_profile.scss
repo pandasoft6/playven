@@ -1,0 +1,518 @@
+.profile_radius {
+  border-top-left-radius: 0.3125rem;
+  border-top-right-radius: 0.3125rem;
+}
+
+.venue-item__content {
+  .venue-item__total {
+    @extend .text-uc;
+    .venue-item__total_text {
+      @extend .color-primary-brand;
+      @extend .text-right;
+      font-family: $font-geom;
+    }
+  }
+  .venue-item__total_subtext {
+    color: #000;
+    font-size: .75rem;
+    font-family: $font-geol;
+  }
+  .venue-name__photo-wrap {
+    > div {
+      width: 6.25rem;
+      height: 6.25rem;
+      border-radius: 50%;
+      background: map_get($color-map, 'turquoise') 50% 50% no-repeat;
+      background-size: cover;
+      border: 0.3125rem solid #fff;
+      box-shadow: 0 8px 24px rgba(46,47,48,0.15);
+
+      @include mobile {
+        width: 4.25rem;
+        height: 4.25rem;
+      }
+    }
+  }
+
+  .venue-name__content-wrap {
+    @include mobile {
+      font-size: .8rem;
+      h5 {
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+.profile-day-card {
+  @extend .flex-col;
+  @extend .flex-col-desktop;
+  @extend .mvm;
+  @extend .mvs-mobile;
+  .profile-day-card__header {
+    @extend .flex-row;
+    @extend .flex-hb;
+    @extend .color-white;
+    @extend .color-bg-primary-brand;
+    @extend .profile_radius;
+    padding: 1.5rem 1rem;
+    .profile-day-card__title {
+      @extend .flex-col;
+      @extend .flex-hc;
+      @extend .mhm;
+      @extend .text-uc;
+      @extend .t2;
+      @extend .em-high;
+      @include mobile {
+        font-size: 1.2rem;
+        margin: 0;
+      }
+    }
+  }
+
+  .total-block {
+    @extend .flex-col;
+    @extend .flex-row-mobile;
+    @extend .flex-vc-mobile;
+    @extend .flex-wrap;
+    @extend .text-uc;
+    @extend .mhs;
+
+    @include mobile {
+      font-size: .8rem;
+    }
+
+    .total-text {
+      font-family: $font-geom;
+    }
+
+    .total-subtext {
+      @extend .text-right;
+      font-size: .75rem;
+      font-family: $font-geol;
+
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+}
+
+.sport-card {
+  @extend .flex-row;
+  @extend .flex-col-mobile;
+  @extend .mbs;
+}
+
+.court-card__wrapper {
+  width: calc(100% - 15.2rem);
+  @include mobile {
+    width: 100%;
+  }
+  button {
+    @extend .mht;
+    min-width: 14.2rem;
+    width: calc(33.3333% - 1rem);
+    float: left;
+    margin-bottom: .8125rem;
+    @include mobile {
+      margin: .8125rem 0 0;
+      width: 100%;
+    }
+  }
+}
+.court-card {
+  @extend .flex-row;
+  @extend .color-bg-grey-300;
+  padding: .69rem;
+  font-size: .8125rem;
+  line-height: 1;
+  border-radius: .3rem;
+  white-space: nowrap;
+  position: relative;
+  text-align: left;
+  transition: all .25s ease-out;
+
+  &:hover {
+    @extend .color-bg-lighter-grey;
+
+    .court-card__icon-menu {
+      transform: scale(1.3);
+    }
+  }
+
+  .court-card__payment-type {
+    @extend .mtt;
+  }
+
+  .court-card__icon-menu {
+    position: absolute;
+    top: -.2rem;
+    right: .5rem;
+    font-size: 1.2rem;
+    transition: all .25s ease-out;
+  }
+
+  .court-card__icon {
+    @extend .mrt;
+    @extend .color-primary-brand;
+  }
+  .court-card__title {
+    @extend .color-primary-brand;
+    @extend .text-uc;
+    @extend .mrt;
+  }
+  .court-card__time {
+    @extend .color-grey-600;
+    @extend .mrt;
+    @extend .mtt;
+  }
+  .court-card__price {
+    @extend .color-primary-brand;
+    margin-left: auto;
+  }
+}
+
+.sport-slot__wrapper {
+  overflow: hidden;
+  width: 14.7rem;
+
+  @include mobile {
+    width: auto;
+  }
+}
+.sport-slot {
+  @extend .flex-row;
+  @extend .flex-col-mobile;
+  @extend .flex-vc;
+  height: 4.81625rem;
+  position: relative;
+  z-index: 999;
+  border-radius: .3rem;
+
+  background-color: map_get($color-map, 'primary-brand');
+  color: map_get($color-map, 'white');
+  width: 12.5rem;
+
+  @include mobile {
+    width: auto;
+    height: auto;
+    background: none;
+    color: map_get($color-map, 'primary-brand');
+    text-align: center;
+
+    &:before {
+      content: '';
+      background: map_get($color-map, 'primary-brand');
+      position: absolute;
+      top: 50%;
+      height: 1px;
+      width: 100%;
+    }
+  }
+
+  .sport-slot__sport-name {
+    @include mobile {
+      background: map_get($color-map, 'grey-150');
+      padding: 0 .5rem;
+      font-size: 1rem;
+    }
+  }
+
+  .sport-slot__icon,
+  .sport-slot__count-courts {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &:after {
+    content: $icon-hex;
+    color: map_get($color-map, 'primary-brand');
+    font-family: playven-icons, serif;
+    font-size: 5.23rem;
+    position: absolute;
+    z-index: 1;
+    transform: rotate(30deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 5rem;
+    width: 100%;
+    height: 100%;
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.court-card-popover__wrapper {
+  width: 17rem;
+}
+.court-card-popover {
+  @extend .color-white;
+  .court-card-popover__header {
+    @extend .mbs;
+    font-family: $font-geol, sans-serif;
+    font-size: 1rem;
+    opacity: .32;
+    i {
+      @extend .mrt;
+      position: relative;
+      top: 3px;
+    }
+  }
+  .court-card-popover__action-list {
+    .court-card-popover__action-item {
+      @extend .flex-row;
+      @extend .flex-vc;
+      @extend .pvt;
+      @extend .phs;
+      cursor: pointer;
+      margin: 0 -.9rem;
+      &:hover {
+        @extend .color-bg-azure;
+      }
+      .icon-send {
+        font-size: 1.2rem;
+      }
+      .icon-cancel {
+        font-size: 1.8rem;
+      }
+      i, img {
+        @extend .mrs;
+        font-size: 1.75rem;
+        width: 1.8rem;
+      }
+      span {
+        @extend .text-uc;
+        text-decoration: underline;
+      }
+    }
+  }
+  .court-card-popover__message {
+    @extend .mvs;
+    font-family: $font-geol, sans-serif;
+    font-size: 1rem;
+    opacity: .32;
+  }
+  .court-card-popover__buttons {
+    @extend .flex-row;
+    button {
+      @extend .color-bd-white;
+      padding: .2rem 1rem;
+      border-radius: .3rem;
+      i {
+        @extend .mrt;
+        font-size: .6rem;
+      }
+      &:first-child {
+        @extend .color-bg-azure;
+        @extend .mrs;
+        border: 0;
+      }
+      > div {
+        @extend .flex-row;
+        @extend .flex-vc;
+      }
+    }
+  }
+}
+
+.game_passes {
+  @extend .flex-row;
+  @extend .flex-wrap;
+}
+
+.gamePasses-navigation__holder {
+  @extend .flex-row;
+  @extend .flex-col-lt-tablet;
+  @extend .flex-vc;
+  @extend .flex-vs-lt-tablet;
+  @extend .flex-hb;
+}
+
+.game-pass-card {
+  @extend .pas;
+  width: 33.3333%;
+
+  @include lt-wide-desktop {
+    width: 50%;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+
+  .game-pass-card__holder {
+    @extend .color-bg-white-smoke;
+    border-radius: .3rem;
+    overflow: hidden;
+  }
+
+  .game-pass-card__head {
+    @extend .color-bg-primary-brand;
+    @extend .color-white;
+    @extend .pas;
+    background-size: cover;
+  }
+
+  .game-pass-card__venue-link {
+    @extend .mrs;
+
+    a {
+      @extend .color-bg-primary-brand;
+      @extend .text-uc;
+      @extend .pvt;
+      @extend .phs;
+      display: block;
+      font-family: $font-geol, sans-serif;
+      font-size: 0.94rem;
+      line-height: 1.2;
+      border-radius: .3rem;
+
+      &:hover {
+        @extend .color-bg-highlight-primary-brand;
+      }
+    }
+  }
+
+  .game-pass-card__price {
+    font-family: $font-geom, sans-serif;
+    font-size: 1.5625rem;
+    min-width: 5rem;
+  }
+
+  .game-pass-card__title {
+    @extend .text-uc;
+    font-family: $font-geom, sans-serif;
+    font-size: 1.5625rem;
+  }
+
+  .game-pass-card__description {
+    @extend .text-uc;
+    font-size: .8125rem;
+  }
+
+  .game-pass-card__item {
+    @extend .phs;
+    @extend .pvt;
+    font-size: .875rem;
+
+    .game-pass-card__item-title {
+      @extend .text-uc;
+      line-height: 1.2;
+    }
+
+    .game-pass-card__item-value {
+      @extend .color-pale-turquoise;
+      margin-top: -.1rem;
+    }
+
+    &:nth-child(even) {
+      @extend .color-bg-white-ghost;
+    }
+  }
+}
+
+.add-game-pass {
+  @extend .flex-row;
+  @extend .flex-col-lt-desktop;
+  @extend .color-bg-turquoise;
+  @extend .pam;
+  @extend .mlm;
+  @extend .color-white;
+  border-radius: .3rem;
+
+  @include lt-tablet {
+    width: 100%;
+    margin: 2rem 0 0;
+    background: none;
+    padding: 0;
+  }
+
+  .add-game-pass__title-block {
+    @extend .flex-col;
+    @extend .mrm;
+
+    @include lt-desktop {
+      margin-bottom: 1rem;
+    }
+
+    .add-game-pass__title {
+      @extend .text-uc;
+      font-size: 1.25rem;
+
+      @include lt-tablet {
+        color: map_get($color-map, 'turquoise');
+      }
+    }
+
+    .add-game-pass__sub-title {
+      @extend .mtt;
+      font-size: .8125rem;
+      line-height: 1;
+
+      @include lt-tablet {
+        color: map_get($color-map, 'dark-grey');
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .add-game-pass__input-block {
+    @extend .flex-row;
+    @extend .flex-vb;
+    @extend .flex-vc-lt-tablet;
+
+    @include lt-tablet {
+      background: map_get($color-map, 'turquoise');
+      border-radius: .3rem;
+    }
+
+    > div:first-child {
+      padding: 0 1.5rem;
+      flex-grow: 1;
+    }
+
+    input {
+      @extend .color-white;
+      @extend .mrm;
+      border: 0;
+      width: 20rem;
+      max-width: 100%;
+      border-bottom: 1px solid #fff;
+      background: none;
+      font-size: 1.2rem;
+      font-family: $font-geol, sans-serif;
+
+      @include lt-tablet {
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    button {
+      @extend .pvt;
+      @extend .phs;
+      @extend .color-bg-azure;
+      border-radius: .3rem;
+      font-family: $font-geol, sans-serif;
+      font-size: .875rem;
+      line-height: 1;
+
+      &:hover {
+        @extend .color-bg-light-azure;
+        cursor: pointer;
+      }
+
+      @include lt-tablet {
+        height: 4rem;
+        font-size: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+machine:
+  timezone: Europe/Helsinki
+  node:
+    version: 6
+dependencies:
+  pre:
+    - npm install
+  cache_directories:
+    - node_modules
+test:
+  override:
+    - npm run deploy:prod
+deployment:
+  prod:
+    branch: demosuomi
+    commands:
+      - aws s3 sync dist s3://web-userfrontend --delete

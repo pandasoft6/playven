@@ -1,0 +1,440 @@
+.payment-modal {
+  width: auto;
+  margin: 0;
+  height: 100%;
+  .modal-body {
+    padding: 2rem;
+    height: 100%;
+    position: relative;
+    z-index: 3;
+    min-height: 30rem;
+  }
+  .sign-in-button {
+    padding: 0.5rem 3rem;
+    border-radius: 5px;
+    background-color: #0e7dff;
+    border: solid 1px #0e7dff;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+  .sign-up-button {
+    padding: 0.5rem 3rem;
+    border-radius: 5px;
+    background-color: #fff;
+    border: solid 1px #0e7dff;
+    color: #0e7dff;
+    text-transform: uppercase;
+  }
+  .pay-button {
+    padding: 0;
+    height: 2.563rem;
+    width: 11rem;
+    border-radius: 0 .3rem .3rem 0;
+    font-family: $font-geob;
+    @include mobile() {
+      border-radius: .3rem;
+    }
+    &.big-button {
+      @extend .phs;
+      border-radius: .3rem;
+      width: auto;
+    }
+    &:disabled {
+      @extend .color-bg-grey-600;
+      cursor: not-allowed;
+    }
+  }
+
+  @include mobile-small {
+    .sign-in-button,
+    .sign-up-button,
+    .pay-button {
+      width: 100%;
+      margin: 0 0 .5rem;
+    }
+
+  }
+
+  .payment-modal__modal-block {
+    height: 100%;
+    position: relative;
+    padding-top: 102px;
+    padding-bottom: 168px;
+    .modal-block__main-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 0 0 1rem;
+    }
+    .modal-block__bottom-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem 0 0;
+    }
+  }
+
+  .skip_button {
+    font-size: .7rem;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .totalPriceTitle {
+    @include mobile() {
+      font-size: 1.6rem;
+    }
+  }
+
+  .totalPrice {
+    position: relative;
+    @include mobile() {
+      font-size: 1.6rem;
+    }
+    @include mobile-small {
+      font-size: 1.2rem;
+    }
+    .currency {
+      position: absolute;
+      top: -0.6rem;
+      left: -1.1rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  .modal-close {
+    position: absolute;
+    border: 2px solid map_get($color-map, 'white');
+    border-radius: 50%;
+    padding: .5rem;
+    top: 1rem;
+    left: -3.5rem;
+    z-index: 2;
+    cursor: pointer;
+    transform: translate3d(0,0,0);
+    @include mobile() {
+      color: map_get($color-map, 'turquoise');
+      border-color: map_get($color-map, 'turquoise');
+      left: auto;
+      right: 3rem;
+      z-index: 4;
+    }
+
+    @include tablet() {
+      color: map_get($color-map, 'turquoise');
+      border-color: map_get($color-map, 'turquoise');
+      left: auto;
+      right: 1rem;
+      z-index: 4;
+    }
+
+    @include mobile-small {
+      right: 1rem;
+    }
+  }
+
+  .modal-content {
+    width: 46.875rem;
+    height: 100%;
+  }
+
+  .payment-modal__overlay {
+    position: fixed;
+    z-index: 1;
+    width: 200%;
+    height: 1000%;
+    top: 0;
+    left: -50%;
+    opacity: .8;
+  }
+
+  .payment-modal__spinner {
+    height: 2.5rem;
+    width: 100%;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+  }
+
+  .summary-item {
+    .summary-item__holder_info {
+      border-radius: .3rem;
+      width: 51%;
+      position: relative;
+      @include tablet {
+        min-width: 20rem;
+      }
+      @include mobile() {
+        width: auto;
+      }
+      .summary-item__remove {
+        position: absolute;
+        top: .2rem;
+        right: .2rem;
+        font-size: .4rem;
+      }
+    }
+
+    .summary-item__price {
+      margin-left: auto;
+      position: relative;
+      padding-left: .5rem;
+      .currency {
+        position: absolute;
+        top: -.29rem;
+        left: -.1rem;
+        font-size: .7rem;
+      }
+    }
+
+    .summary-item__select {
+      @extend .flex-row;
+      @extend .flex-vb;
+      width: 45%;
+      margin-left: auto;
+      @include mobile() {
+        width: auto;
+        margin-left: 0;
+      }
+    }
+  }
+
+  .summary-items-wrapper {
+    height: 100%;
+  }
+}
+
+.scrollarea {
+  .scrollbar-container {
+    opacity: 1!important;
+    .scrollbar {
+      background: map_get($color-map, 'turquoise')!important;
+      position: relative;
+      z-index: 2;
+    }
+    &:hover {
+      background: none!important;
+      opacity: 1!important;
+    }
+    &::before {
+      content: '';
+      background: map_get($color-map, 'grey-300');
+      position: absolute;
+      z-index: 1;
+      width: 2px;
+      height: 100%;
+      top: 0;
+      left: 4px;
+    }
+  }
+}
+
+.venue-item {
+  .venue-item__content {
+    display: none;
+  }
+  .venue-item__day {
+    @include mobile-small {
+      width: 50%;
+    }
+  }
+  &.open {
+    .venue-item__content {
+      display: block;
+    }
+    .venue-item__details {
+      i {
+        transform: rotate(0);
+      }
+    }
+  }
+  @include mobile-small {
+    font-size: .8rem;
+  }
+}
+
+.venue-item__details {
+  margin-left: auto;
+  @include mobile() {
+    position: absolute;
+    right: 1.5rem;
+    top: .5rem;
+  }
+  button {
+    position: relative;
+    padding: 0 1rem 0 0;
+    &:hover {
+      text-decoration: underline;
+    }
+    i {
+      position: absolute;
+      right: 0;
+      top: .5rem;
+      font-size: .4rem;
+      transition: .2s;
+      transform: rotate(-180deg);
+    }
+    &.active {
+      i {
+        transform: rotate(0);
+      }
+    }
+  }
+}
+
+.court-name__content-wrap {
+  @include mobile-small {
+    font-size: .8rem;
+  }
+}
+
+.court-name__photo-wrap {
+  > div {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: map_get($color-map, 'turquoise') 50% 50% no-repeat;
+    background-size: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 8px 24px rgba(46,47,48,0.15);
+  }
+}
+
+.cardDialog {
+  .Select-control,
+  .addCardPlaceholder {
+    @extend .flex-row;
+    @extend .flex-vc;
+    @extend .color-bd-grey-10;
+    @extend .color-grey;
+    @extend .pht;
+    text-transform: uppercase;
+    border-right: 0;
+    border-radius: .3rem 0 0 .3rem;
+    font-size: 1rem;
+    height: 2.563rem;
+    @include mobile() {
+      border-radius: .3rem;
+      border-right: 1px solid map_get($color-map, 'grey-10');
+    }
+  }
+  .addCardPlaceholder__text {
+    cursor: default;
+    @include mobile() {
+      font-size: .6rem;
+    }
+  }
+  .add-card {
+    border-radius: .3rem;
+    border: none;
+    padding: .3rem .55rem;
+    transition: .2s;
+    margin-left: auto;
+    &:hover {
+      @extend .color-bg-light-azure;
+    }
+  }
+  .card_block {
+    font-size: .7rem;
+    .card_block__right {
+      margin-left: auto;
+    }
+    .card_block__use_card {
+      text-decoration: underline;
+    }
+  }
+}
+
+.gamePass_block__header {
+  @extend .color-white;
+  opacity: .35;
+}
+.gamePass_block__dialog-option {
+  &.active {
+    @extend .color-bdb-white;
+  }
+}
+.gamePassDialog {
+  position: relative;
+
+  .gamePassDialog__clear {
+    @extend .color-red;
+    right: 1.5rem;
+    transition: none;
+  }
+
+  button {
+    @extend .phs;
+    @extend .pvt;
+    width: 100%;
+    text-align: left;
+
+    i {
+      font-size: .55rem;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -2px;
+      transform: rotate(0deg);
+      transition: all 0.2s ease-in-out;
+    }
+
+    &.ant-popover-open {
+
+      i.icon-up-arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .SelectPlayven {
+    &.has-value {
+      .Select-arrow-zone {
+        display: none;
+      }
+    }
+    .Select-menu-outer {
+      width: 17rem;
+      @include mobile() {
+        width: 100%;
+      }
+    }
+    .Select-control {
+      @extend .flex-row;
+      @extend .flex-vc;
+    }
+    .Select-multi-value-wrapper {
+      @extend .flex-row;
+      @extend .flex-vc;
+      @extend .pht;
+      height: 2.5rem;
+      text-transform: uppercase;
+    }
+    .Select-placeholder {
+      font-size: .88rem;
+      text-transform: uppercase;
+    }
+  }
+  .gamePass_block {
+    .gamePass_block__action {
+      font-size: .7rem;
+      text-decoration: underline;
+      margin-left: auto;
+      &:hover {
+        @extend .color-bg-light-azure;
+      }
+    }
+  }
+}
+
+.payment-sign-in {
+  padding-top: 2rem;
+  width: 84%;
+  text-align: center;
+  @media (min-width: $tablet-width) {
+    margin: auto;
+    width: 40%;
+  }
+}

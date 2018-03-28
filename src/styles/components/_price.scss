@@ -1,0 +1,88 @@
+.price {
+  @extend .flex-row;
+  @extend .flex-vc;
+  @extend .flex-hc;
+  @extend .color-white;
+
+  $price-bubble-regular-height: 2.875rem;
+  $price-bubble-large-height: 5.625rem;
+
+  min-width: $price-bubble-regular-height;
+  height: $price-bubble-regular-height;
+  font-family: $font-geob;
+  position: relative;
+
+  &:before {
+    @extend .color-turquoise;
+
+    content: $icon-hex;
+    font-family: playven-icons, serif;
+    font-size: $price-bubble-regular-height;
+    position: absolute;
+    transform-origin: 50% 50%;
+    transition: all .5s ease-out;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .price__currency {
+    @extend .t6;
+    @extend .mtt;
+    margin-right: 0.125rem;
+    position: relative;
+    top: -0.5rem;
+  }
+
+  .price__amount {
+    margin-top: 0.3rem;
+    position: relative;
+  }
+
+  &.price-white {
+    @extend .color-turquoise;
+
+    &:before {
+      @extend .color-white;
+    }
+  }
+
+  &.price-grey {
+    @extend .color-white;
+
+    &:before {
+      @extend .color-grey-200;
+    }
+  }
+
+  &.price-pale-turquoise {
+    @extend .color-white;
+
+    &:before {
+      @extend .color-pale-turquoise;
+    }
+  }
+
+
+  &.price-large {
+    min-width: $price-bubble-large-height;
+    height: $price-bubble-large-height;
+
+    &:before {
+      font-size: $price-bubble-large-height;
+    }
+
+    .price__currency {
+      @extend .t5;
+    }
+
+    .price__amount {
+      font-size: 1.75rem;
+      margin-top: 0.5rem;
+    }
+  }
+}

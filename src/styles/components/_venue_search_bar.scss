@@ -1,0 +1,335 @@
+.search-field {
+  position: relative;
+  margin: 0 .7rem;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.02);
+  &:first-child {
+    margin-left: 0;
+  }
+  @include tablet-landscape {
+    width: 20rem;
+  }
+  .Select-arrow-zone {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .2s;
+    .Select-arrow {
+      &::before {
+        content: $icon-down-arrow;
+        font-family: 'playven-icons';
+        font-size: .35rem;
+      }
+    }
+  }
+  &.is-open {
+    .Select-arrow-zone {
+      transform: rotate(180deg);
+    }
+  }
+  .Select-control {
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      left: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.1);
+    }
+    .Select-value-label {
+      @extend .color-dark-grey;
+      font-size: 0.9rem;
+      @include tablet-landscape {
+        font-size: 1.15rem;
+      }
+    }
+  }
+  i {
+    @extend .color-turquoise;
+    @extend .t4;
+    margin-right: .75rem;
+  }
+  .Select-menu-outer {
+    @extend .color-bg-white;
+    @extend .pvt;
+    padding-left: .625rem;
+    padding-right: .625rem;;
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+    top: 100%;
+    box-shadow: 0 1rem 2.5rem rgba(0,0,0,0.15);
+    border-radius: 0 0 .5rem .5rem;
+    letter-spacing: 1px;
+    .Select-menu {
+      max-height: 12rem;
+      overflow-x: auto;
+    }
+  }
+  .search-field__select-option {
+    padding-left: 1.55rem;
+    &.icon {
+      padding: .25rem .25rem .25rem 0;
+    }
+  }
+  .Select-control {
+    height: 2rem;
+  }
+  .search-field__select-option,
+  .search-field__select-value,
+  .Select-placeholder {
+    @extend .flex-row;
+    @extend .flex-vc;
+    @extend .color-dark-grey;
+    font-size: 0.9rem;
+    cursor: pointer;
+    @include tablet-landscape {
+      font-size: 1.15rem;
+    }
+    &.selected {
+      @extend .color-turquoise;
+    }
+    &:hover {
+      @extend .color-turquoise;
+    }
+  }
+  .search-field__select-option {
+    @extend .pat;
+    line-height: 1;
+  }
+  &.is-searchable {
+    .Select-placeholder,
+    .Select-control .Select-value {
+      bottom: 0;
+      color: #aaa;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding-left: 2.3rem;
+      padding-right: 1rem;
+      line-height: 2rem;
+    }
+    .Select-input {
+      @extend .color-dark-grey;
+      height: 2rem;
+      padding-left: 2.3rem;
+      input {
+        width: 100%!important;
+        height: 100%;
+        padding: 0;
+        background: none rgba(0, 0, 0, 0);
+        border: 0 none;
+        box-shadow: none;
+        cursor: default;
+        display: inline-block;
+        font-family: inherit;
+        font-size: inherit;
+        margin: 0;
+        outline: none;
+        line-height: 1;
+        -webkit-appearance: none;
+      }
+    }
+  }
+  &.is-focused .Select-input > input {
+    cursor: text;
+  }
+}
+
+.search-field {
+  &.is-searchable {
+    .Select-input {
+      &::before {
+        font-family: 'playven-icons';
+        font-size: 1.3rem;
+        position: absolute;
+        left: .4rem;
+        @extend .color-turquoise;
+      }
+    }
+  }
+}
+
+.search-field__city {
+  .Select-input::before {
+    content: $icon-buildings;
+  }
+}
+.search-field__time {
+  .Select-input::before {
+    content: $icon-time;
+  }
+}
+.search-field__duration {
+  .Select-input::before {
+    content: $icon-clock2;
+  }
+}
+.search-field__sport {
+  min-width: 10rem;
+  .Select-control {
+    padding-left: .5rem;
+  }
+}
+
+
+.search-field__date {
+  .react-datepicker__input-container {
+    @extend .flex-row;
+    @extend .flex-vc;
+    @extend .color-dark-grey;
+    font-size: .9rem;
+    cursor: pointer;
+    padding-bottom: .3rem;
+    height: 2rem;
+    position: relative;
+    @include tablet-landscape {
+      font-size: 1.15rem;
+    }
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      left: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.1);
+    }
+    &::after {
+      content: $icon-calendar2;
+      @extend .color-turquoise;
+      font-family: playven-icons;
+      top: 0;
+      left: .4rem;
+      right: auto;
+    }
+     input {
+       height: 100%;
+       line-height: 1;
+       padding: 0 0 0 2.2rem;
+       font-size: .9rem;
+       @include tablet-landscape {
+         font-size: 1.15rem;
+       }
+     }
+  }
+}
+
+.react-datepicker__tether-target-attached-top {
+  .react-datepicker {
+    .react-datepicker__triangle {
+      top: 100%;
+      transform: rotate(180deg);
+    }
+  }
+}
+.react-datepicker {
+  border-color: rgba(0,0,0,0.15);
+  border-radius: .3rem;
+  .react-datepicker__triangle {
+    border-left: 7px solid rgba(0, 0, 0, 0);
+    border-right: 7px solid rgba(0, 0, 0, 0);
+    border-bottom: 7px solid #999;
+    border-top: 0;
+    border-bottom-color: rgba(0,0,0,.2);
+    &:before {
+      content: '';
+      display: inline-block;
+      border-left: 6px solid rgba(0, 0, 0, 0);
+      border-right: 6px solid rgba(0, 0, 0, 0);
+      border-bottom: 6px solid #fff;
+      border-top: 0;
+      position: absolute;
+      z-index: 1;
+      margin-left: .15rem;
+    }
+  }
+  .react-datepicker__header{
+    background: none;
+    padding: .5rem 0 0;
+    .react-datepicker__current-month{
+      @extend .color-dark-grey;
+      @extend .pvt;
+      padding-top: .3rem;
+      padding-bottom: .3rem;
+      text-transform: none;
+      font-weight: normal;
+      line-height: 1;
+      background: none;
+      display: inline-block;
+      min-width: 65%;
+      border-radius: .3rem;
+      &:hover{
+        background: #eee;
+      }
+    }
+    .react-datepicker__day-names{
+      padding: 0;
+      .react-datepicker__day-name{
+        color: #000;
+        font-weight: normal;
+      }
+    }
+  }
+  .react-datepicker__day{
+    &.react-datepicker__day--selected{
+      font-weight: normal;
+      border-radius: 50%;
+      background: #0e76f7;
+      color: #fff;
+      &::after{
+        display: none;
+      }
+    }
+    &:hover{
+      border-radius: 50%;
+    }
+  }
+}
+
+.venue-search-bar-wrapper {
+  @extend .flex-row;
+  @extend .flex-hc;
+  @extend .flex-vc;
+  @extend .flex-col-lt-desktop;
+  .search-submit {
+    @extend .pat;
+    width: 12rem;
+    max-width: 100%;
+    font-family: $font-geob;
+    text-transform: uppercase;
+    transition: .2s;
+    border-radius: 1.8rem;
+    letter-spacing: 1px;
+    &:hover {
+      box-shadow: 0 11px 32px rgba(14,151,247,0.46);
+    }
+  }
+}
+
+.venue-search-bar {
+  @extend .color-bg-white;
+  @extend .flex-row;
+  @extend .flex-col-tablet-landscape;
+  @extend .flex-vc-tablet-landscape;
+  @extend .pas;
+
+  > div {
+    @extend .flex;
+  }
+
+  @include tablet-landscape() {
+    > div {
+      margin: 0 0 2rem;
+    }
+  }
+}
+

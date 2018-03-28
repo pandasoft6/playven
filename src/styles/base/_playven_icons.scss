@@ -1,0 +1,511 @@
+$icon-path: "../../fonts/playven_icons/";
+
+$icon-computer: "\e945";
+$icon-android: "\e946";
+$icon-tennis-ball: "\e947";
+$icon-download: "\e93f";
+$icon-wallet: "\e941";
+$icon-phone-call: "\e942";
+$icon-law: "\e943";
+$icon-letter: "\e944";
+$icon-cancel: "\e93d";
+$icon-send: "\e93e";
+$icon-recurring: "\e93c";
+$icon-lock: "\e938";
+$icon-info2: "\e937";
+$icon-calendar-new: "\e934";
+$icon-man-playing-tennis: "\e935";
+$icon-medium-arrow-right: "\e936";
+$icon-hex-map-cover: "\e939";
+$icon-hex-grid-cover: "\e93a";
+$icon-hex-time-cover: "\e93b";
+$icon-hex-grid-light: "\e940";
+$icon-hex-time-light: "\e92a";
+$icon-hex-map-light: "\e933";
+$icon-checked: "\e930";
+$icon-rounded-cross: "\e931";
+$icon-search-light: "\e92c";
+$icon-logo-playven: "\e920";
+$icon-logo-paddle: "\e921";
+$icon-logo: "\e912";
+$icon-down-arrow: "\e900";
+$icon-up-arrow: "\e901";
+$icon-left-arrow: "\e902";
+$icon-right-arrow: "\e903";
+$icon-long-arrow-right: "\e904";
+$icon-short-arrow-right: "\e905";
+$icon-cross2: "\ea0f";
+$icon-thin-cross: "\e907";
+$icon-fullscreen: "\e906";
+$icon-search2: "\e986";
+$icon-user: "\e90e";
+$icon-user-circle: "\e928";
+$icon-logout: "\e922";
+$icon-clock: "\e908";
+$icon-clock2: "\e926";
+$icon-time: "\e929";
+$icon-help: "\e909";
+$icon-info: "\e90a";
+$icon-calendar: "\e90f";
+$icon-calendar2: "\e925";
+$icon-buildings: "\e927";
+$icon-map: "\e90b";
+$icon-phone: "\e90c";
+$icon-parking: "\e90d";
+$icon-site: "\e92d";
+$icon-transport: "\e92e";
+$icon-hex-outline: "\e910";
+$icon-hex: "\e911";
+$icon-hex-check: "\e92f";
+$icon-hex-close: "\e932";
+$icon-hex-payment: "\e91d";
+$icon-hex-last: "\e916";
+$icon-hex-next: "\e918";
+$icon-star: "\e91a";
+$icon-grid: "\e91b";
+$icon-tennis: "\e91e";
+$icon-squash: "\e913";
+$icon-badminton: "\e91c";
+$icon-tabletennis: "\e914";
+$icon-golf: "\e915";
+$icon-soccer: "\e917";
+$icon-volleyball: "\e919";
+$icon-floorball: "\e91f";
+$icon-mountain: "\e92b";
+$icon-facebook: "\ea90";
+$icon-twitter: "\ea96";
+$icon-tumblr: "\eab9";
+$icon-apple: "\eabe";
+$icon-search: "\e987";
+$icon-cross: "\ea10";
+$icon-circle-up: "\ea41";
+$icon-grid2: "\e923";
+$icon-grid1: "\e924";
+$icon-menu: "\e9bd";
+
+@font-face {
+  font-family: 'playven-icons';
+  src:  url('../../fonts/playven_icons/playven-icons.eot?5krpy5');
+  src:  url('../../fonts/playven_icons/playven-icons.eot?5krpy5#iefix') format('embedded-opentype'),
+  url('../../fonts/playven_icons/playven-icons.ttf?5krpy5') format('truetype'),
+  url('../../fonts/playven_icons/playven-icons.woff?5krpy5') format('woff'),
+  url('../../fonts/playven_icons/playven-icons.svg?5krpy5#playven-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'playven-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-computer {
+  &:before {
+    content: $icon-computer;
+  }
+}
+.icon-android {
+  &:before {
+    content: $icon-android;
+  }
+}
+.icon-tennis-ball {
+  &:before {
+    content: $icon-tennis-ball;
+  }
+}
+.icon-download {
+  &:before {
+    content: $icon-download;
+  }
+}
+.icon-wallet {
+  &:before {
+    content: $icon-wallet;
+  }
+}
+.icon-phone-call {
+  &:before {
+    content: $icon-phone-call;
+  }
+}
+.icon-law {
+  &:before {
+    content: $icon-law;
+  }
+}
+.icon-letter {
+  &:before {
+    content: $icon-letter;
+  }
+}
+.icon-cancel {
+  &:before {
+    content: $icon-cancel;
+  }
+}
+.icon-send {
+  &:before {
+    content: $icon-send;
+  }
+}
+.icon-recurring {
+  &:before {
+    content: $icon-recurring;
+  }
+}
+.icon-lock {
+  &:before {
+    content: $icon-lock;
+  }
+}
+.icon-medium-arrow-right {
+  &:before {
+    content: $icon-medium-arrow-right;
+  }
+}
+.icon-info2 {
+  &:before {
+    content: $icon-info2;
+  }
+}
+.icon-man-playing-tennis {
+  &:before {
+    content: $icon-man-playing-tennis;
+  }
+}
+.icon-calendar-new {
+  &:before {
+    content: $icon-calendar-new;
+  }
+}
+.icon-hex-map-light {
+  &:before {
+    content: $icon-hex-map-light;
+  }
+}
+.icon-hex-time-light {
+  &:before {
+    content: $icon-hex-time-light;
+  }
+}
+.icon-hex-grid-light {
+  &:before {
+    content: $icon-hex-grid-light;
+  }
+}
+.icon-hex-time-cover {
+  &:before {
+    content: $icon-hex-time-cover;
+  }
+}
+.icon-hex-grid-cover {
+  &:before {
+    content: $icon-hex-grid-cover;
+  }
+}
+.icon-hex-map-cover {
+  &:before {
+    content: $icon-hex-map-cover;
+  }
+}
+.icon-checked {
+  &:before {
+    content: $icon-checked;
+  }
+}
+.icon-rounded-cross {
+  &:before {
+    content: $icon-rounded-cross;
+  }
+}
+.icon-search-light {
+  &:before {
+    content: $icon-search-light;
+  }
+}
+.icon-logo-playven {
+  &:before {
+    content: $icon-logo-playven;
+  }
+}
+.icon-logo-paddle {
+  &:before {
+    content: $icon-logo-paddle;
+  }
+}
+.icon-logo {
+  &:before {
+    content: $icon-logo;
+  }
+}
+.icon-down-arrow {
+  &:before {
+    content: $icon-down-arrow;
+  }
+}
+.icon-up-arrow {
+  &:before {
+    content: $icon-up-arrow;
+  }
+}
+.icon-left-arrow {
+  &:before {
+    content: $icon-left-arrow;
+  }
+}
+.icon-right-arrow {
+  &:before {
+    content: $icon-right-arrow;
+  }
+}
+.icon-long-arrow-right {
+  &:before {
+    content: $icon-long-arrow-right;
+  }
+}
+.icon-short-arrow-right {
+  &:before {
+    content: $icon-short-arrow-right;
+  }
+}
+.icon-cross2 {
+  &:before {
+    content: $icon-cross2;
+  }
+}
+.icon-thin-cross {
+  &:before {
+    content: $icon-thin-cross;
+  }
+}
+.icon-fullscreen {
+  &:before {
+    content: $icon-fullscreen;
+  }
+}
+.icon-search2 {
+  &:before {
+    content: $icon-search2;
+  }
+}
+.icon-user {
+  &:before {
+    content: $icon-user;
+  }
+}
+.icon-user {
+  &:before {
+    content: $icon-user-circle;
+  }
+}
+.icon-logout {
+  &:before {
+    content: $icon-logout;
+  }
+}
+.icon-clock {
+  &:before {
+    content: $icon-clock;
+  }
+}
+.icon-clock2 {
+  &:before {
+    content: $icon-clock2;
+  }
+}
+.icon-buildings {
+  &:before {
+    content: $icon-buildings;
+  }
+}
+.icon-help {
+  &:before {
+    content: $icon-help;
+  }
+}
+.icon-info {
+  &:before {
+    content: $icon-info;
+  }
+}
+.icon-calendar {
+  &:before {
+    content: $icon-calendar;
+  }
+}
+.icon-calendar2 {
+  &:before {
+    content: $icon-calendar2;
+  }
+}
+.icon-map {
+  &:before {
+    content: $icon-map;
+  }
+}
+.icon-phone {
+  &:before {
+    content: $icon-phone;
+  }
+}
+.icon-parking {
+  &:before {
+    content: $icon-parking;
+  }
+}
+.icon-site {
+  &:before {
+    content: $icon-site;
+  }
+}
+.icon-transport {
+  &:before {
+    content: $icon-transport;
+  }
+}
+.icon-hex-outline {
+  &:before {
+    content: $icon-hex-outline;
+  }
+}
+.icon-hex {
+  &:before {
+    content: $icon-hex;
+  }
+}
+.icon-hex-check {
+  &:before {
+    content: $icon-hex-check;
+  }
+}
+.icon-hex-close {
+  &:before {
+    content: $icon-hex-close;
+  }
+}
+.icon-hex-payment {
+  &:before {
+    content: $icon-hex-payment;
+  }
+}
+.icon-hex-last {
+  &:before {
+    content: $icon-hex-last;
+  }
+}
+.icon-hex-next {
+  &:before {
+    content: $icon-hex-next;
+  }
+}
+.icon-star {
+  &:before {
+    content: $icon-star;
+  }
+}
+.icon-grid {
+  &:before {
+    content: $icon-grid;
+  }
+}
+.icon-tennis {
+  &:before {
+    content: $icon-tennis;
+  }
+}
+.icon-squash {
+  &:before {
+    content: $icon-squash;
+  }
+}
+.icon-badminton {
+  &:before {
+    content: $icon-badminton;
+  }
+}
+.icon-tabletennis {
+  &:before {
+    content: $icon-tabletennis;
+  }
+}
+.icon-golf {
+  &:before {
+    content: $icon-golf;
+  }
+}
+.icon-soccer {
+  &:before {
+    content: $icon-soccer;
+  }
+}
+.icon-volleyball {
+  &:before {
+    content: $icon-volleyball;
+  }
+}
+.icon-floorball {
+  &:before {
+    content: $icon-floorball;
+  }
+}
+.icon-mountain {
+  &:before {
+    content: $icon-mountain;
+  }
+}
+.icon-facebook {
+  &:before {
+    content: $icon-facebook;
+  }
+}
+.icon-twitter {
+  &:before {
+    content: $icon-twitter;
+  }
+}
+.icon-tumblr {
+  &:before {
+    content: $icon-tumblr;
+  }
+}
+.icon-apple {
+  &:before {
+    content: $icon-apple;
+  }
+}
+.icon-search {
+  &:before {
+    content: $icon-search;
+  }
+}
+.icon-grid2 {
+  &:before {
+    content: $icon-grid2;
+  }
+}
+.icon-grid1 {
+  &:before {
+    content: $icon-grid1;
+  }
+}
+.icon-time {
+  &:before {
+    content: $icon-time;
+  }
+}
+.icon-menu {
+  &:before {
+    content: $icon-menu;
+  }
+}

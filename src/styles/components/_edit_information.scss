@@ -1,0 +1,107 @@
+.edit-information {
+  @extend .max-width;
+  @extend .mbm;
+  background: #fff;
+  padding: 4.375rem 6.25rem;
+  box-shadow: 0.07px 3.999px 84px 0 rgba(0, 0, 0, 0.09);
+  @include mobile {
+    padding: 2rem;
+  }
+
+  .edit-information__section {
+    @extend .flex-row;
+    @extend .flex-vc;
+    @extend .mbm;
+    @extend .pvt;
+    @extend .color-bdb-turquoise;
+    margin-right: .4rem;
+    margin-left: .4rem;
+    position: relative;
+    &.section_password,
+    &.section_payment_method {
+      @extend .mtl;
+      @extend .mbs;
+    }
+    @include mobile {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .section_payment_method__description {
+    @extend .color-grey-400;
+    font-size: .8125rem;
+    max-width: 20rem;
+    @include mobile {
+      max-width: none;
+      padding-bottom: 1rem;
+    }
+  }
+
+  .section_payment_method__card_dialog {
+    flex-grow: 2;
+    padding-left: 2rem;
+    @include mobile {
+      padding-left: 0;
+    }
+    .cardDialog {
+      margin: 0 0 .2rem;
+      .addCardPlaceholder,
+      .Select-control {
+        border-radius: .3rem;
+        @extend .color-bd-grey-10;
+      }
+    }
+    .section_payment_method__card_description {
+      @extend .color-grey-400;
+      font-size: .6875rem;
+    }
+  }
+
+  .edit-information__last_update {
+    position: absolute;
+    bottom: 3px;
+    right: 0;
+    font-size: .8rem;
+    @include lt-tablet {
+      bottom: -23px;
+    }
+  }
+
+  .edit-information__section-title {
+    @extend .color-turquoise;
+    font-family: $font-geom;
+    font-size: 1rem;
+  }
+
+  .field-renderer-container {
+    @include mobile {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .input-text {
+    margin-bottom: 0;
+    padding: .5rem 1rem;
+    border-color: map_get($color-map, 'grey-500')!important;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, color .15s ease-in-out;
+    &:focus,
+    &:hover {
+      border-color: map_get($color-map, 'turquoise')!important;
+    }
+    &:focus + .input-upper-label,
+    &:hover + .input-upper-label {
+      @extend .color-turquoise;
+    }
+    @include mobile {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  .input-upper-label {
+    @extend .color-grey-500;
+    left: 1rem!important;
+    transition: color .15s ease-in-out;
+  }
+}
